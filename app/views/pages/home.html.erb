@@ -1,2 +1,83 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<html>
+<head>
+  <title>Nightmare Hollidays</title>
+  <%# <link rel="icon" href="image.png"> %>
+  <style>
+    /* Ajouter le lien CSS */
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+        <button>S'identifier</button>
+        <button>Inscription</button>
+      </div>
+      <div>
+        <button>Accueil</button>
+      </div>
+      <div>
+        <h1>Nightmare Hollidays</h1>
+      </div>
+    </nav>
+    <div>
+      <input type="text" placeholder="Recherche">
+    </div>
+    <div>
+      <select>
+        <option value="Lyon">Lyon</option>
+        <option value="Paris">Paris</option>
+        <option value="Nice">Nice</option>
+      </select>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" value="vue-cimetiere">
+        Vue sur cimetière
+      </label>
+      <label>
+        <input type="checkbox" value="eclairage-bougie">
+        Éclairage à la bougie
+      </label>
+      <label>
+        <input type="checkbox" value="sol-qui-grince">
+        Sol qui grince
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <div>
+      <div>
+        <img src="chemin/vers/image1.jpg" alt="Image 1">
+        <h2>Titre du bien 1</h2>
+        <p>Note: 4.5/5</p>
+        <p>Prix: 100€</p>
+      </div>
+      <div>
+        <img src="chemin/vers/image2.jpg" alt="Image 2">
+        <h2>Titre du bien 2</h2>
+        <p>Note: 4.2/5</p>
+        <p>Prix: 80€</p>
+      </div>
+   <%# Ajouter es autres biens avec la même structure %>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2023 Nightmare Hollidays</p>
+    </div>
+    <div>
+      <a href="#">Accueil</a>
+      <a href="#">Disclaimer</a>
+    </div>
+    <div>
+      <a href="#">Support</a>
+    </div>
+  </footer>
+</body>
+</html>
