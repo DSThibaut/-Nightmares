@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <html>
-  <head>
-    <title>Nightmares</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<head>
+    <title>Nightmare Holidays</title>
+    <%= favicon_link_tag 'nh icon.png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
@@ -14,5 +17,16 @@
   <%# <%= render "shared/navbar" %> %>
   <%= render "shared/flashes" %>
     <%= yield %>
-  </body>
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2023 Nightmare Holidays</p>
+    </div>
+    <div class="footer-right">
+      <a href="#">Accueil</a>
+      <a href="#">Support</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </footer>
+</body>
 </html>

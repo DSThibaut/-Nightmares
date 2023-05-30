@@ -1,5 +1,61 @@
-<h1>Nightmares Holidays</h1>
-<p></p>
-<%= "Welcome on our holidays website!" %>
-<p></p>
-<%= link_to "View all houses", 'houses'%>
+
+<header>
+  <nav>
+    <div class="navbar-left">
+      <%= link_to root_path do %>
+        <%= image_tag "nh icon.png", alt: "Accueil", class: "navbar-logo" %>
+      <% end %>
+    </div>
+    <div class="navbar-center">
+      <h1>Nightmare Holidays</h1>
+    </div>
+    <div class="navbar-right">
+      <button class="btn btn-secondary">S'identifier</button>
+      <button class="btn btn-secondary">Inscription</button>
+    </div>
+  </nav>
+  <div class="search-container">
+    <div class="search-input">
+      <input type="text" placeholder="Recherche">
+      <%= image_tag "bouton-recherche.svg", alt: "Bouton recherche", class: "btn-search" %>
+        <div class="search-filters" style="margin-right: 16px;">
+        </div>
+  </div>
+    <div class="search-filters">
+      <select>
+        <option value="Lyon">Lyon</option>
+        <option value="Paris">Paris</option>
+        <option value="Nice">Nice</option>
+      </select>
+      <label>
+        <input type="checkbox" value="vue-cimetiere">
+        Vue sur cimetière
+      </label>
+      <label>
+        <input type="checkbox" value="eclairage-bougie">
+        Éclairage à la bougie
+      </label>
+      <label>
+        <input type="checkbox" value="sol-qui-grince">
+        Sol qui grince
+      </label>
+  </div>
+</header>
+
+<main>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag 'manoir-hante-2023.jpg', alt: 'Manoir hanté' %>
+      <h2>Titre du bien 1</h2>
+      <p>Note: 4.5/5</p>
+      <p>Prix: 300€</p>
+    </div>
+    <div class="col-md-4">
+      <%= image_tag 'villa-3237114_1920', alt: 'Villa hantée' %>
+      <h2>Titre du bien 2</h2>
+      <p>Note: 4.2/5</p>
+      <p>Prix: 280€</p>
+    </div>
+    <!-- Ajouter les autres biens avec la même structure -->
+  </div>
+</main>
