@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="fr">
-<meta charset="UTF-8">
-<html>
-<head>
-  <title>Nightmare Hollidays</title>
-  <%# <link rel="icon" href="image.png"> %>
-  <style>
-    /* Ajouter le lien CSS */
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <div>
-        <button>S'identifier</button>
-        <button>Inscription</button>
-      </div>
-      <div>
-        <button>Accueil</button>
-      </div>
-      <div>
-        <h1>Nightmare Hollidays</h1>
-      </div>
-    </nav>
-    <div>
-      <input type="text" placeholder="Recherche">
+<header>
+  <nav>
+    <div class="navbar-left">
+      <%= link_to root_path do %>
+        <%= image_tag "nh icon.png", alt: "Accueil", class: "navbar-logo" %>
+      <% end %>
     </div>
-    <div>
+    <div class="navbar-center">
+      <h1>Nightmare Holidays</h1>
+    </div>
+    <div class="navbar-right">
+      <button class="btn btn-secondary">S'identifier</button>
+      <button class="btn btn-secondary">Inscription</button>
+    </div>
+  </nav>
+  <div class="search-container">
+    <div class="search-input">
+      <input type="text" placeholder="Recherche">
+      <%= image_tag "bouton-recherche.svg", alt: "Bouton recherche", class: "btn-search" %>
+        <div class="search-filters" style="margin-right: 16px;">
+        </div>
+  </div>
+    <div class="search-filters">
       <select>
         <option value="Lyon">Lyon</option>
         <option value="Paris">Paris</option>
         <option value="Nice">Nice</option>
       </select>
-    </div>
-    <div>
       <label>
         <input type="checkbox" value="vue-cimetiere">
         Vue sur cimetière
@@ -46,38 +38,23 @@
         <input type="checkbox" value="sol-qui-grince">
         Sol qui grince
       </label>
-    </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <div>
-      <div>
-        <img src="chemin/vers/image1.jpg" alt="Image 1">
-        <h2>Titre du bien 1</h2>
-        <p>Note: 4.5/5</p>
-        <p>Prix: 100€</p>
-      </div>
-      <div>
-        <img src="chemin/vers/image2.jpg" alt="Image 2">
-        <h2>Titre du bien 2</h2>
-        <p>Note: 4.2/5</p>
-        <p>Prix: 80€</p>
-      </div>
-   <%# Ajouter es autres biens avec la même structure %>
+<main>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag 'manoir-hante-2023.jpg', alt: 'Manoir hanté' %>
+      <h2>Titre du bien 1</h2>
+      <p>Note: 4.5/5</p>
+      <p>Prix: 300€</p>
     </div>
-  </main>
-
-  <footer>
-    <div>
-      <p>© 2023 Nightmare Hollidays</p>
+    <div class="col-md-4">
+      <%= image_tag 'villa-3237114_1920', alt: 'Villa hantée' %>
+      <h2>Titre du bien 2</h2>
+      <p>Note: 4.2/5</p>
+      <p>Prix: 280€</p>
     </div>
-    <div>
-      <a href="#">Accueil</a>
-      <a href="#">Disclaimer</a>
-    </div>
-    <div>
-      <a href="#">Support</a>
-    </div>
-  </footer>
-</body>
-</html>
+    <!-- Ajouter les autres biens avec la même structure -->
+  </div>
+</main>
