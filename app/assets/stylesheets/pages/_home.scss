@@ -83,9 +83,22 @@ nav {
   padding: 10px;
 }
 
-.col-md-4 img {
+/* Ajout de la classe property-image pour redimentionner les images dans les grilles */
+.property-image {
   width: 100%;
-  height: auto;
+  height: 240px; /* Définir ici la hauteur souhaitée pour les images */
+  object-fit: cover; /* Pour ajuster la taille de l'image en préservant les proportions */
+}
+
+/* Lien sans effet visuel */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lien sans soulignement au survol */
+a:hover {
+  text-decoration: none;
 }
 
 /* Footer */
