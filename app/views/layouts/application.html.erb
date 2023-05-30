@@ -14,7 +14,23 @@
   </head>
 
   <body>
-  <%= render "shared/flashes" %>
+
+  <header>
+  <nav>
+    <div class="navbar-left">
+      <%= link_to root_path do %>
+        <%= image_tag "nh icon.png", alt: "Accueil", class: "navbar-logo" %>
+      <% end %>
+    </div>
+    <div class="navbar-center">
+      <h1>Nightmare Holidays</h1>
+    </div>
+    <div class="navbar-right">
+      <button class="btn btn-secondary">S'identifier</button>
+      <button class="btn btn-secondary">Inscription</button>
+    </div>
+  </nav>
+
     <%= yield %>
 
   <footer>
@@ -22,10 +38,10 @@
       <p>© 2023 Nightmare Holidays</p>
     </div>
     <div class="footer-right">
-      <a href="#">Accueil</a>
-      <a href="#">Support</a>
-      <a href="#">Disclaimer</a>
-      <% console %>
+      <%= link_to "Accueil", "#" %>
+      <%= link_to "Support", "#" %>
+      <%= link_to "Disclaimer", "#" %>
+                               
     </div>
   </footer>
 </body>
