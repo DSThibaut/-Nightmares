@@ -26,13 +26,13 @@
       <h1>Nightmare Holidays</h1>
     </div>
     <div class="navbar-right">
-      <button class="btn btn-secondary">S'identifier</button>
-      <button class="btn btn-secondary">Inscription</button>
+      <%= link_to "<button class='btn btn-secondary'>S'identifier</button>".html_safe, new_user_session_path %>
+      <%= link_to "<button class='btn btn-secondary'>Inscription</button>".html_safe, new_user_registration_path %>
     </div>
   </nav>
 
     <%= yield %>
-
+    <% console %>
   <footer>
     <div class="footer-left">
       <p>© 2023 Nightmare Holidays</p>
@@ -41,7 +41,7 @@
       <%= link_to "Accueil", "#" %>
       <%= link_to "Support", "#" %>
       <%= link_to "Disclaimer", "#" %>
-                               
+
     </div>
   </footer>
 </body>
