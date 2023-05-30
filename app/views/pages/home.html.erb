@@ -49,7 +49,7 @@
     <% @houses.each do |house| %>
         <div class="col-md-4">
       <%= link_to house_path(house.id) do %>
-          <%= image_tag '860_maison-hantee.jpg', alt: 'Maison des horreurs', class: 'property-image' %>
+          <%= img src=house.photos_url, alt: 'Maison des horreurs', class: 'property-image' %>
           <h2><%= house.name %></h2>
           <p>Note: <%= house.rating %>/5</p>
           <p>Prix: <%= house.price %> €</p>
