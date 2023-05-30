@@ -1,44 +1,44 @@
 class BookingsController < ApplicationController
   def index
-    @houses = House.all
+    @bookings = Bookings.all
   end
 
   def show
-    @houses = House.find(params[:id])
+    @bookings = Booking.find(params[:id])
   end
 
   def new
-    @house = House.new
+    @booking = Booking.new
   end
 
   def create
-    @house = House.new(house)
-    @house.save
+    @booking = Booking.new(booking_params)
+    @booking.save
 
-    redirect_to house_path(@house)
+    redirect_to booking_path(@booking)
   end
 
   def edit
-    @house = House.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
-    @house = House.find(params[:id])
-    @house.update(house_params)
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
 
-    redirect_to house_path(@house)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
-    @house = House.find(params[:id])
-    @house.destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
 
-    redirect_to houses_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
 
-  def house_params
-    params.require(:house).permit(:name, :address, :description, :price, :rating, :superficy, :photo_url)
+  def booking_params
+    params.require(:booking).permit(:date, :accepted)
   end
 end
