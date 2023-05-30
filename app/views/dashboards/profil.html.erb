@@ -1,11 +1,13 @@
 <h1>DashBoard</h1>
 <div class="container">
   <div class="row">
-    <div class="column">
-      <h2><%= current_user.last_name %></h2>
-    </div>
-    <div class="column">
-      <h2><%= current_user.first_name %></h2>
+    <div class="d-flex justify-content-left gap-3">
+      <div class="column">
+        <h2><%= current_user.last_name %></h2>
+      </div>
+      <div class="column">
+        <h2><%= current_user.first_name %></h2>
+      </div>
     </div>
   </div>
 <h2><%= current_user.avatar %></h2>

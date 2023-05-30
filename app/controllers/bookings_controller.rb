@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
-    @booking.house_is = params[:id]
+    @booking.house_id = params[:id]
     @booking.save
     redirect_to profil_path(current_user)
   end

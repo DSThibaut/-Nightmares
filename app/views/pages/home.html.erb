@@ -1,24 +1,9 @@
-
-<header>
-  <nav>
-    <div class="navbar-left">
-      <%= link_to root_path do %>
-        <%= image_tag "nh icon.png", alt: "Accueil", class: "navbar-logo" %>
-      <% end %>
-    </div>
-    <div class="navbar-center">
-      <h1>Nightmare Holidays</h1>
-    </div>
-    <div class="navbar-right">
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-      <%= button_to "S'identifier", new_user_session_path, class: "btn btn-secondary", :method => :get %>
-      <%= button_to "Inscription", new_user_registration_path, class: "btn btn-secondary", :method => :get %>
-    </div>
-  </nav>
   <div class="search-container">
     <div class="search-input">
       <input type="text" placeholder="Recherche">
-      <%= image_tag "bouton-recherche.svg", alt: "Bouton recherche", class: "btn-search" %>
+        <a href="#" class="search-button">
+         <%= image_tag "bouton-recherche.svg", alt: "Bouton recherche", class: "btn-search" %>
+        </a>
         <div class="search-filters" style="margin-right: 16px;">
         </div>
   </div>
@@ -46,16 +31,56 @@
 <main>
 <div class="container">
   <div class="row">
-    <% @houses.each do |house| %>
-        <div class="col-md-4">
-      <%= link_to house_path(house.id) do %>
-          <%= img src=house.photos_url, alt: 'Maison des horreurs', class: 'property-image' %>
-          <h2><%= house.name %></h2>
-          <p>Note: <%= house.rating %>/5</p>
-          <p>Prix: <%= house.price %> €</p>
+    <div class="col-md-4">
+      <%# remplacer le tem link par link_to property_path(ID DU BIEN) %>
+      <%= link_to "#temp_link_1" do %>
+        <%= image_tag 'villa-3237114_1920', alt: 'Villa hantée', class: 'property-image' %>
+        <h2>Titre du bien 1</h2>
+        <p>Note: 4.5/5</p>
+        <p>Prix: 300€</p>
       <% end %>
-        </div>
-    <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "#temp_link_2" do %>
+      <%= image_tag 'manoir-hante-2023.jpg', alt: 'Manoir hanté', class: 'property-image' %>
+      <h2>Titre du bien 2</h2>
+      <p>Note: 4.2/5</p>
+      <p>Prix: 280€</p>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "#temp_link_3" do %>
+      <%= image_tag 'maison-des-horreurs', alt: 'Maison des horreurs', class: 'property-image' %>
+      <h2>Titre du bien 3</h2>
+      <p>Note: 3.9/5</p>
+      <p>Prix: 380€</p>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "#temp_link_4" do %>
+      <%= image_tag '860_maison-hantee', alt: 'Maison hantée', class: 'property-image' %>
+      <h2>Titre du bien 4</h2>
+      <p>Note: 4.3/5</p>
+      <p>Prix: 460€</p>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "#temp_link_5" do %>
+      <%= image_tag 'dracula chateau 3947', alt: 'Chateau Dracula', class: 'property-image' %>
+      <h2>Titre du bien 5</h2>
+      <p>Note: 4.9/5</p>
+      <p>Prix: 999€</p>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "#temp_link_6" do %>
+      <%= image_tag 'devil-house', alt: 'Maison diabolique', class: 'property-image' %>
+      <h2>Titre du bien 6</h2>
+      <p>Note: 4.6/5</p>
+      <p>Prix: 666€</p>
+      <% end %>
+    </div>
+    <!-- Ajouter les autres biens avec la même structure -->
   </div>
 </div>
 </main>
