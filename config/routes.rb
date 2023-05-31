@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   # resources :profil
   get 'profil/:id', to: 'dashboards#profil', as: 'profil'
+  delete 'houses/:id', to: 'houses#destroy', as: 'delete'
 end

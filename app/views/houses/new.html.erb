@@ -7,7 +7,7 @@
   <%= f.input :address, required: true %>
   <%= f.input :superficy, required: true %>
   <%= f.input :price, required: true %>
-  <%= f.input :photos_url, required: true %>
+  <%= f.input :photo, as: :file, required: true %>
   <%= f.submit "Submit rent", class: "btn btn-primary" %>
 <% end %>
 
