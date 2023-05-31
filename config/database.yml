@@ -84,4 +84,4 @@ production:
   database: _Nightmares_production
   username: _Nightmares
   password: <%= ENV["_NIGHTMARES_DATABASE_PASSWORD"] %>
-  host: localhost
+  url: <%= ENV["MY_APP_DATABASE_URL"] %>
