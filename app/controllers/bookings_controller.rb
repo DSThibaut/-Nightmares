@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.house_id = params[:id]
     @booking.save
-    redirect_to profil_path(current_user)
+    redirect_to profil_path(current_user[:id])
   end
 
   def edit
