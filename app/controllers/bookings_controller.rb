@@ -1,12 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Bookings.all
-  end
-
-  def show
-    @bookings = Booking.find(params[:id])
-  end
-
   def new
     @booking = Booking.new
   end
@@ -17,24 +9,6 @@ class BookingsController < ApplicationController
     @booking.house_id = params[:id]
     @booking.save
     redirect_to profil_path(current_user[:id])
-  end
-
-  def edit
-    @booking = Booking.find(params[:id])
-  end
-
-  def update
-    @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-
-    redirect_to booking_path(@booking)
-  end
-
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-
-    redirect_to bookings_path, status: :see_other
   end
 
   private
