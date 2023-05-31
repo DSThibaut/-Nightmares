@@ -6,5 +6,6 @@ Rails.application.routes.draw do
       resources :bookings, only: %i[new create]
     end
   end
-  get 'profil', to: 'dashboards#profil'
+  # resources :profil
+  get 'profil/:id', to: 'dashboards#profil', as: 'profil'
 end
