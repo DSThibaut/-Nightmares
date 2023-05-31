@@ -113,6 +113,21 @@ nav {
   transform: scale(1.04);
 }
 
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating img {
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+}
+
+.price {
+  margin-top: 16px;
+}
+
 /* Lien sans effet visuel */
 a {
   text-decoration: none;
