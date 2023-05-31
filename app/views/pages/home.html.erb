@@ -1,4 +1,4 @@
-  <div class="search-container centered-body-elements">
+ <div class="search-container centered-body-elements">
     <div class="search-input">
       <input type="text" placeholder="Recherche">
         <a href="#" class="search-button">
@@ -31,57 +31,130 @@
       </label>
   </div>
 </header>
-<main>
-  <div class="row">
-    <div class="col-md-4">
-      <%# remplacer le tem link par link_to property_path(ID DU BIEN) %>
-      <%= link_to "#temp_link_1" do %>
-        <%= cl_image_tag "kpjruhmfmhh9fgjblfgi", alt: "Manoir hanté", class: "property-image" %>
-        <h2>Titre du bien 1</h2>
-        <p>Note: 4.5/5</p>
-        <p>Prix: 300€</p>
-      <% end %>
+
+<div class ="centered-body-elements">
+
+  <main>
+    <div class="row">
+      <div class="col-md-4 zoom">
+        <%# remplacer le tem link par link_to property_path(ID DU BIEN) %>
+        <%= link_to "#temp_link_1" do %>
+          <%= image_tag 'villa-3237114_1920', alt: 'Villa hantée', class: 'property-image' %>
+          <h2>Titre du bien 1</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        </div>
+
+          <div class='price'>
+          <p>Prix: <strong>300€</strong></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 zoom">
+        <%= link_to "#temp_link_2" do %>
+        <%= image_tag 'manoir-hante-2023.jpg', alt: 'Manoir hanté', class: 'property-image' %>
+        <h2>Titre du bien 2</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        </div>
+
+        <div class='price'>
+        <p>Prix: <strong>280€</strong></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 zoom">
+        <%= link_to "#temp_link_3" do %>
+        <%= image_tag 'maison-des-horreurs', alt: 'Maison des horreurs', class: 'property-image' %>
+        <h2>Titre du bien 3</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        </div>
+
+        <div class='price'>
+        <p>Prix: <strong>380€</strong></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 zoom">
+        <%= link_to "#temp_link_4" do %>
+        <%= image_tag '860_maison-hantee', alt: 'Maison hantée', class: 'property-image' %>
+        <h2>Titre du bien 4</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        </div>
+
+        <div class='price'>
+        <p>Prix: <strong>460€</strong></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 zoom">
+        <%= link_to "#temp_link_5" do %>
+        <%= image_tag 'dracula chateau 3947', alt: 'Chateau Dracula', class: 'property-image' %>
+        <h2>Titre du bien 5</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        </div>
+
+        <div class='price'>
+        <p>Prix: <strong>999€</strong></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 zoom">
+        <%= link_to "#temp_link_6" do %>
+        <%= image_tag 'devil-house', alt: 'Maison diabolique', class: 'property-image' %>
+        <h2>Titre du bien 6</h2>
+
+        <div class="rating">
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+        <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+        </div>
+
+        <div class='price'>
+        <p>Prix: <strong>666€</strong></p>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <div class="col-md-4">
-      <%= link_to "#temp_link_2" do %>
-      <%= cl_image_tag 'bohj62eyjqzu65aarsjw', alt: 'Manoir hanté', class: 'property-image' %>
-      <h2>Titre du bien 2</h2>
-      <p>Note: 4.2/5</p>
-      <p>Prix: 280€</p>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <%= link_to "#temp_link_3" do %>
-      <%= cl_image_tag 'ou3mrof40qolwovgnys1', alt: 'Maison des horreurs', class: 'property-image' %>
-      <h2>Titre du bien 3</h2>
-      <p>Note: 3.9/5</p>
-      <p>Prix: 380€</p>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <%= link_to "#temp_link_4" do %>
-      <%= cl_image_tag 'jw9uduksmqorkigz2tfp', alt: 'Maison hantée', class: 'property-image' %>
-      <h2>Titre du bien 4</h2>
-      <p>Note: 4.3/5</p>
-      <p>Prix: 460€</p>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <%= link_to "#temp_link_5" do %>
-      <%= cl_image_tag 'fstad7dr3fs13iwinuaz', alt: 'Chateau Dracula', class: 'property-image' %>
-      <h2>Titre du bien 5</h2>
-      <p>Note: 4.9/5</p>
-      <p>Prix: 999€</p>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <%= link_to "#temp_link_6" do %>
-      <%= cl_image_tag 'whbrjejzgaqjpnu99ow2', alt: 'Maison diabolique', class: 'property-image' %>
-      <h2>Titre du bien 6</h2>
-      <p>Note: 4.6/5</p>
-      <p>Prix: 666€</p>
-      <% end %>
+  </main>
+
+  <br>
+  <div class ='animated-text'>
+    <div class="g-container">
+      <div class="word">Your</div>
+      <div class="word">Worst</div>
+      <div class="word">Holidays</div>
     </div>
   </div>
-</div>
 
+</div>

@@ -26,27 +26,22 @@
       <h1>Nightmare Holidays</h1>
     </div>
     <div class="navbar-right">
-      <% if current_user %>
-        <%= link_to "<button class='btn btn-secondary'>Profil</button>".html_safe, profil_path(current_user[:id]) %>
-        <%= link_to "<button class='btn btn-secondary'>Log out</button>".html_safe, destroy_user_session_path, data: {turbo_method: :delete} %>
-      <% end %>
-      <% if !current_user %>
-        <%= link_to "<button class='btn btn-secondary'>S'identifier</button>".html_safe, new_user_session_path %>
-        <%= link_to "<button class='btn btn-secondary'>Inscription</button>".html_safe, new_user_registration_path %>
-      <% end %>
+      <button class="btn btn-secondary">S'identifier</button>
+      <button class="btn btn-secondary">Inscription</button>
     </div>
   </nav>
 
     <%= yield %>
-    <% console %>
+
   <footer>
     <div class="footer-left">
       <p>© 2023 Nightmare Holidays</p>
     </div>
     <div class="footer-right">
-      <%= link_to "Accueil", root_path %>
+      <%= link_to "Accueil", "#" %>
       <%= link_to "Support", "#" %>
       <%= link_to "Disclaimer", "#" %>
+
     </div>
   </footer>
 </body>
