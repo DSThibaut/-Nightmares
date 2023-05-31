@@ -6,7 +6,15 @@
       <%= image_tag("citrouille.png") %>
     <% end %>
     <h2><%= house.name %></h2>
-    <p>Note: <%= house.rating %>/5</p>
-    <p>Prix: <%= house.price %> €</p>
+
+    <div class="rating">
+      <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+      <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+      <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+      <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+      <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+    </div>
+
+    <p>Prix: <strong><%= house.price %>€</strong></p>
   </div>
 <% end %>
