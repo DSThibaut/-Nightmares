@@ -13,9 +13,12 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
-    @house.save
-
-    redirect_to house_path(@house)
+    @house.user_id = current_user.id
+    if @house.save
+      redirect_to house_path(@house)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,12 +36,12 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @house.destroy
 
-    redirect_to houses_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
 
   def house_params
-    params.require(:house).permit(:name, :address, :description, :price, :rating, :superficy, :photo_url)
+    params.require(:house).permit(:name, :address, :description, :price, :rating, :superficy, :photo)
   end
 end
