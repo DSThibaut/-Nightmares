@@ -84,4 +84,4 @@ production:
   database: _Nightmares_production
   username: _Nightmares
   password: <%= ENV["_NIGHTMARES_DATABASE_PASSWORD"] %>
-  socket: /var/run/postgresql/.s.PGSQL.5432
+  host: '/var/run/postgres'
