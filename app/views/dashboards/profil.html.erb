@@ -12,10 +12,10 @@
         <p><%= current_user.email %></p>
       </div>
       <div class="column">
-        <p><%= current_user.email %></p>
+        <p><%= current_user.houses.first.name %></p>
       </div>
     </div>
   </div>
 <h2><%= current_user.avatar %></h2>
 </div>
-<%= link_to "RENT YOUR HOUSE", 'houses/new'%>
+<%= link_to "RENT YOUR HOUSE", new_house_path%>
