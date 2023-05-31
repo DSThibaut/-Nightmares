@@ -84,4 +84,4 @@ production:
   database: _Nightmares_production
   username: _Nightmares
   password: <%= ENV["_NIGHTMARES_DATABASE_PASSWORD"] %>
-  host: '/var/run/postgres'
+  host: localhost
