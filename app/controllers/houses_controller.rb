@@ -4,7 +4,7 @@ class HousesController < ApplicationController
   end
 
   def show
-    @houses = House.find(params[:id])
+    @house = House.find(params[:id])
   end
 
   def new
@@ -35,7 +35,6 @@ class HousesController < ApplicationController
   def destroy
     @house = House.find(params[:id])
     @house.destroy
-
     redirect_to houses_path, status: :see_other
   end
 
