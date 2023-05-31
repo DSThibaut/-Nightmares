@@ -1,11 +1,11 @@
 <h1>Haunted house details</h1>
 <p></p>
-<h2><%=@houses.name%></h2>
-<p> Description: <%=@houses.description%></p>
-<p> Address: <%=@houses.address%><p>
-<p> Superficy: <%=@houses.superficy%><p>
-<p> Price: <%=@houses.price%><p>
-<p> Rating: <%=@houses.rating%><p>
+<h2><%=@house.name%></h2>
+<p> Description: <%=@house.description%></p>
+<p> Address: <%=@house.address%><p>
+<p> Superficy: <%=@house.superficy%><p>
+<p> Price: <%=@house.price%><p>
+<p> Rating: <%=@house.rating%><p>
 
 <%= link_to "Louer cette maison!", new_booking_path %>
-<%# <%= link_to "Supprimer cette maison!", houses_path  status: :see_other %>
+<%= link_to "Supprimer cette maison", house_path(@house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>

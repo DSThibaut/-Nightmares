@@ -12,7 +12,9 @@
         <p><%= current_user.email %></p>
       </div>
       <div class="column">
-        <p><%= current_user.houses.first.name %></p>
+        <% if current_user.houses.first != nil  %>
+          <p><%= current_user.houses.first.name %></p>
+        <% end %>
       </div>
     </div>
   </div>
