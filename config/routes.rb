@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :houses do
     member do
-      resources :bookings, only: %i[new create edit update]
+      resources :bookings, only: %i[new create edit update destroy]
     end
   end
   # resources :profil
