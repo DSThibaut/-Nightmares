@@ -15,6 +15,13 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+
+    redirect_to profil_path
+  end
+  
   def approve
     @booking = Booking.find(params[:id])
     if @booking.update(accepted: true)
@@ -31,6 +38,7 @@ class BookingsController < ApplicationController
     else
       redirect_to profil_path, notice: "erreur"
     end
+
   end
 
   private

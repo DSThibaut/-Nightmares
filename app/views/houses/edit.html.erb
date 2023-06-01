@@ -1,4 +1,5 @@
-<h1>Houses#edit</h1>
+<h1>Modifier votre maison</h1>
+
 <%= simple_form_for [@house] do |f| %>
   <%= f.input :name, required: true%>
   <%= f.input :description, required: true %>
@@ -6,5 +7,5 @@
   <%= f.input :superficy, required: true %>
   <%= f.input :price, required: true %>
   <%= f.input :photo, as: :file, required: true %>
-  <%= f.submit "MODIFIER", class: "btn btn-primary" %>
+  <%= f.submit "MODIFIER LA MAISON", class: "btn btn-primary" %>
 <% end %>

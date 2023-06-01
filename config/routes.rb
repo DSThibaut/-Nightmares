@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :houses do
     member do
-      resources :bookings, only: %i[new create edit]
+      resources :bookings, only: %i[new create edit update]
     end
   end
   # resources :profil
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   delete 'houses/:id', to: 'houses#destroy', as: 'delete_house'
   patch 'bookings/:id/approve', to: 'bookings#approve', as: 'approve_booking'
   patch 'bookings/:id/decline', to: 'bookings#decline', as: 'decline_booking'
-
 end
