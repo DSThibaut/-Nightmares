@@ -1,4 +1,4 @@
-<h1>Create a new Rent</h1>
+<h1>Crée une nouvelle maison</h1>
 
 <%= simple_form_for [@house] do |f| %>
   <%= f.input :name, required: true%>
@@ -9,5 +9,3 @@
   <%= f.input :photo, as: :file, required: true %>
   <%= f.submit "LOUER!", class: "btn btn-primary" %>
 <% end %>
-
-<%= link_to "ACCUEIL", root_path %>
