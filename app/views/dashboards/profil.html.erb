@@ -28,7 +28,6 @@
         <p></p>
           <%= link_to "AJOUTE UNE MAISON", new_house_path%>
         <p>----------------------------------------</p>
-
       <div class="column">
         <p>- Mes Réservations -</p>
          <% current_user.bookings.each do |booking| %>
@@ -45,4 +44,7 @@
       </div>
   </div>
 </div>
-<% console %>
+<p>----------------------------------------</p>
+<%# <div class="column">
+  <p>- Mes Locations -</p>
+  <% current_user.houses.each do |house| %>
