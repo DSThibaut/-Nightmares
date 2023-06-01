@@ -1,8 +1,8 @@
-<h1>Nouvelle réservation</h1>
+<h1>Modifier votre réservation</h1>
 
 <%= simple_form_for [@booking] do |f| %>
   <%= f.input :date, required: true%>
-  <%= f.submit "VALIDER LA RESERVATION", class: "btn btn-primary" %>
+  <%= f.submit "MODIFIER LA RESERVATION", class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "ACCUEIL", root_path%>
