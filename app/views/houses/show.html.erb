@@ -7,5 +7,9 @@
 <p> Price: <%=@house.price%><p>
 <p> Rating: <%=@house.rating%><p>
 
-<%= link_to "Louer cette maison!", new_booking_path %>
-<%= link_to "Supprimer cette maison", house_path(@house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% if current_user.id != @house.user_id %>
+  <%= link_to "Louer cette maison!", new_booking_path %>
+<% end %>
+
+
+<%= link_to "Supprimer cette maison", house_path(@house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@house).destroy? %>

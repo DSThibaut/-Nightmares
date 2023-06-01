@@ -1,18 +1,21 @@
 class HousesController < ApplicationController
   def index
-    @houses = House.all
+    @houses = policy_scope(House)
   end
 
   def show
     @house = House.find(params[:id])
+    authorize @house
   end
 
   def new
     @house = House.new
+    authorize @house
   end
 
   def create
     @house = House.new(house_params)
+    authorize @house
     @house.user_id = current_user.id
     if @house.save
       redirect_to house_path(@house)
