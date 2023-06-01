@@ -21,6 +21,25 @@ class BookingsController < ApplicationController
 
     redirect_to profil_path
   end
+  
+  def approve
+    @booking = Booking.find(params[:id])
+    if @booking.update(accepted: true)
+      redirect_to profil_path, notice: "Accepté"
+    else
+      redirect_to profil_path, notice: "Erreur"
+    end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    if @booking.update(accepted: false)
+      redirect_to profil_path, notice: "Refusé"
+    else
+      redirect_to profil_path, notice: "erreur"
+    end
+
+  end
 
   private
 
