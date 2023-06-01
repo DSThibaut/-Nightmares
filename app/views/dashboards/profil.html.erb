@@ -45,6 +45,28 @@
   </div>
 </div>
 <p>----------------------------------------</p>
-<%# <div class="column">
-  <p>- Mes Locations -</p>
-  <% current_user.houses.each do |house| %>
+<div class="column">
+  <p>- Mes demandes de reservations -</p>
+  <% @reservations.each do |booking| %>
+    <% if booking.house.photo.attached? %>
+        <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
+      <% else %>
+        <%= image_tag("citrouille.png") %>
+      <% end %>
+    <p>Nom: <%= booking.house.name %></p>
+    <p>Date: <%= booking.date %></p>
+    <p>client: <%="#{booking.customer.first_name} #{booking.customer.last_name}" %><p>
+    <p>Téléphone: <%= "#{booking.customer.phone_number}" %></p>
+    <% if booking.accepted.nil? %>
+      <%= link_to "Confirmer", approve_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
+      <%= link_to "Refuser", decline_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
+    <% else %>
+      <% if booking.accepted %>
+        <p>accepté</p>
+      <% else %>
+        <p>refusé</p>
+      <% end %>
+    <% end %>
+  <% end%>
+
+</div>

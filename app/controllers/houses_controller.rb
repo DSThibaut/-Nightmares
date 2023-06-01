@@ -15,7 +15,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
-    @house.owner = current_user.id
+    @house.user_id = current_user.id
 
     if @house.save
       redirect_to house_path(@house)
