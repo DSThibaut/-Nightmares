@@ -5,7 +5,6 @@
 <p> Address: <%=@house.address%><p>
 <p> Superficy: <%=@house.superficy%><p>
 <p> Price: <%=@house.price%><p>
-<p> Rating: <%=@house.rating%><p>
+<p> Propriétaire: <%="#{@house.user.first_name} #{@house.user.last_name} #{@house.user.phone_number}" %><p>
 
-<%= link_to "Louer cette maison!", new_booking_path %>
-<%= link_to "Supprimer cette maison", house_path(@house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<%= link_to "LOUER CETTE MAISON", new_booking_path %>

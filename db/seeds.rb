@@ -2,6 +2,7 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 Booking.destroy_all
 House.destroy_all
+User.destroy_all
 # Examples:
 #   Character.create(name: "Luke", movie: movies.first)
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
