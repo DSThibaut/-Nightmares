@@ -1,2 +1,10 @@
 <h1>Houses#edit</h1>
-<p>Find me in app/views/houses/edit.html.erb</p>
+<%= simple_form_for [@house] do |f| %>
+  <%= f.input :name, required: true%>
+  <%= f.input :description, required: true %>
+  <%= f.input :address, required: true %>
+  <%= f.input :superficy, required: true %>
+  <%= f.input :price, required: true %>
+  <%= f.input :photo, as: :file, required: true %>
+  <%= f.submit "MODIFIER", class: "btn btn-primary" %>
+<% end %>

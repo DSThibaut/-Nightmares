@@ -20,6 +20,9 @@
               <%= image_tag("citrouille.png") %>
             <% end %>
           <p><%= house.name %></p>
+          <p></p>
+          <%= link_to "MODIFIE UNE MAISON", edit_house_path(house) %>
+          <p></p>
           <%= link_to "SUPPRIME TA MAISON", delete_house_path(house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
         <% end%>
         <p></p>
@@ -35,8 +38,8 @@
             <% end %>
           <p>Nom: <%= booking.house.name %></p>
           <p>Date: <%= booking.date %></p>
-          <p>Propriétaire: <%="#{booking.user.first_name} #{booking.user.last_name} #{booking.user.phone_number}" %><p>
-          <p>Téléphone: <%= booking.user.phone_number %></p>
+          <p>Propriétaire: <%="#{booking.house.owner.first_name} #{booking.house.owner.last_name}" %><p>
+          <p>Téléphone: <%= "#{booking.house.owner.phone_number}" %></p>
         <% end%>
       </div>
   </div>
