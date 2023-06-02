@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
     redirect_to profil_path
   end
-  
+
   def approve
     @booking = Booking.find(params[:id])
     if @booking.update(accepted: true)
@@ -38,7 +38,12 @@ class BookingsController < ApplicationController
     else
       redirect_to profil_path, notice: "erreur"
     end
+  end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to profil_path, status: :see_other
   end
 
   private

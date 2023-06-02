@@ -1,6 +1,13 @@
 class HousesController < ApplicationController
   def index
     @houses = policy_scope(House)
+    @markers = @houses.geocoded.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude
+        info_window_html: render_to_string(partial: "info_window", locals: {house: house})
+      }
+    end
   end
 
   def show
