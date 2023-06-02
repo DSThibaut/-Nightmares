@@ -1,78 +1,64 @@
-<h1>Your Dashboard</h1>
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-left gap-3">
-      <div class="column">
-        <p>- Mes infos -</p>
-        <p><%= current_user.avatar %></p>
-        <p><%= current_user.first_name %></p>
-        <p><%= current_user.last_name %></p>
-        <p><%= current_user.email %></p>
-        <%= link_to "MODIFIER MON PROFIL", edit_user_registration_path %>
-      <div class="column">
-        <p>----------------------------------------</p>
-      <div class="column">
-        <p>- Mes maisons -</p>
-        <% current_user.houses.each do |house| %>
-         <% if house.photo.attached? %>
-              <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
-            <% else %>
-              <%= cl_image_tag("fantome.png") %>
-            <% end %>
-          <p><%= house.name %></p>
-          <p></p>
-          <%= link_to "MODIFIE UNE MAISON", edit_house_path(house) %>
-          <p></p>
-          <%= link_to "SUPPRIME TA MAISON", delete_house_path(house), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-        <% end%>
-        <p></p>
-          <%= link_to "AJOUTE UNE MAISON", new_house_path%>
-        <p>----------------------------------------</p>
-      <div class="column">
-        <p>- Mes Réservations -</p>
-         <% current_user.bookings.each do |booking| %>
-          <% if booking.house.photo.attached? %>
-              <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
-            <% else %>
-              <%= image_tag("fantome.png") %>
-            <% end %>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 232px;
+}
+</style>
 
-          <p>Nom: <%= booking.house.name %></p>
+<div class="dashboard-container">
+  <h2>Dashboard</h2>
+
+  <div class="dashboard-bar">
+    <p><strong>Mes infos</strong></p>
+    <p><%= current_user.avatar %></p>
+    <p><%= current_user.first_name %></p>
+    <p><%= current_user.last_name %></p>
+    <p><%= current_user.email %></p>
+    <a href="<%= edit_user_registration_path %>" class="btnProfil btn-primary", id="btn-modif-profil">Modifier mon profil</a>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="columnProfil">
+      <p>Mes maisons :</p>
+      <% current_user.houses.each do |house| %>
+        <div class="property-cell">
+          <% if house.photo.attached? %>
+            <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
+          <% else %>
+            <%= image_tag("fantome.png") %>
+          <% end %>
+          <p><h3><%= house.name %></h3></p>
+          <p></p>
+          <a href="<%= edit_house_path(house) %>" class="btnProfil btn-primary", id="btn-modif-maison">Modifier la maison</a>
+          <a href="<%= delete_house_path(house) %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?" class="btn btn-danger">Supprimer la maison</a>
+        </div>
+      <% end %>
+      <p></p>
+      <a href="<%= new_house_path %>" class="btnProfil btn-success">Ajouter une maison</a>
+    </div>
+
+    <div class="columnProfil">
+      <p>Mes Réservations :</p>
+      <% current_user.bookings.each do |booking| %>
+        <div class="booking-cell">
+          <% if booking.house.photo.attached? %>
+            <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
+          <% else %>
+            <%= image_tag("fantome.png") %>
+          <% end %>
+          <p><h3><%= booking.house.name %></h3></p>
           <p>Date: <%= booking.date %></p>
-          <p>Propriétaire: <%="#{booking.house.owner.first_name} #{booking.house.owner.last_name}" %><p>
+          <p>Propriétaire: <%="#{booking.house.owner.first_name} #{booking.house.owner.last_name}" %></p>
           <p>Téléphone: <%= "#{booking.house.owner.phone_number}" %></p>
           <p></p>
-          <%= link_to "MODIFIER UNE RESERVATION",  edit_booking_path(booking) %>
-          <p></p>
-          <%= link_to "SUPPRIME TA RESERVATION", delete_booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-        <% end%>
-
-      </div>
-  </div>
+          <a href="<%= edit_booking_path(booking) %>" class="btnProfil btn-primary", id="btn-modif-resa">Modifier une réservation</a>
+          <a href="<%= delete_booking_path(booking) %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?" class="btn btn-danger">Supprimer la réservation</a>
 </div>
-<p>----------------------------------------</p>
-<div class="column">
-  <p>- Mes demandes de reservations -</p>
-  <% @reservations.each do |booking| %>
-    <% if booking.house.photo.attached? %>
-        <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
-      <% else %>
-        <%= image_tag("fantome.png") %>
-      <% end %>
-    <p>Nom: <%= booking.house.name %></p>
-    <p>Date: <%= booking.date %></p>
-    <p>client: <%="#{booking.customer.first_name} #{booking.customer.last_name}" %><p>
-    <p>Téléphone: <%= "#{booking.customer.phone_number}" %></p>
-    <% if booking.accepted.nil? %>
-      <%= link_to "Confirmer", approve_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
-      <%= link_to "Refuser", decline_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
-    <% else %>
-      <% if booking.accepted %>
-        <p>accepté</p>
-      <% else %>
-        <p>refusé</p>
-      <% end %>
-    <% end %>
-  <% end%>
+<% end %>
+</div>
 
+  </div>
 </div>

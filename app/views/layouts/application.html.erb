@@ -31,7 +31,7 @@
 
     <% if current_user %>
       <%= link_to "<button class='btn btn-secondary'>Profil</button>".html_safe, profil_path(current_user[:id]) %>
-      <%= link_to "<button class='btn btn-secondary'>Log out</button>".html_safe, destroy_user_session_path, data: {turbo_method: :delete} %>
+      <%= link_to "<button class='btn btn-secondary'>Déconnexion</button>".html_safe, destroy_user_session_path, data: {turbo_method: :delete} %>
    <% end %>
 
     <% if !current_user %>

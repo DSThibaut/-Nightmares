@@ -1,0 +1,59 @@
+.dashboard-container {
+  text-align: center;
+}
+
+.dashboard-bar {
+  background-color: #D0D0C8;
+  padding: 10px;
+  text-align: center;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.columnProfil {
+  border: 1px solid #D0D0C8;
+  padding: 10px;
+}
+
+.btnProfil {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #1B0E14;
+  color: #F5F5F5;
+  border: none;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #282020;
+  color: #F5F5F5;
+}
+
+.btn-danger {
+  background-color: #ac0101de;
+  color: #F5F5F5;
+}
+
+.btn-success {
+  background-color: #187518df;
+  color: #FFFFFF;
+}
+
+.property-cell {
+  margin-bottom: 24px;
+}
+
+#btn-modif-profil:hover,
+#btn-modif-maison:hover,
+#btn-modif-resa:hover {
+  color: #D0D0C8;
+}
