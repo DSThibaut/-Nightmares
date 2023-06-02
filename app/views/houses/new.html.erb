@@ -1,11 +1,30 @@
-<h1>Crée une nouvelle maison</h1>
+<div class="container">
+<div id="register-page" class="">
 
-<%= simple_form_for [@house] do |f| %>
-  <%= f.input :name, required: true%>
-  <%= f.input :description, required: true %>
-  <%= f.input :address, required: true %>
-  <%= f.input :superficy, required: true %>
-  <%= f.input :price, required: true %>
-  <%= f.input :photo, as: :file, required: true %>
-  <%= f.submit "LOUER!", class: "btn btn-primary" %>
-<% end %>
+  <div class="register-title">
+    <h1>Crée une nouvelle maison</h1>
+  </div>
+
+  <div class="container register-form mb-5">
+    <%= simple_form_for [@house] do |f| %>
+
+    <div class="form-inputs">
+      <div class="left-side-form">
+        <%= f.input :name, required: true%>
+        <%= f.input :description, required: true %>
+        <%= f.input :address, required: true %>
+      </div>
+
+      <div class="right-side-form">
+        <%= f.input :superficy, required: true %>
+        <%= f.input :price, required: true %>
+        <%= f.input :photo, as: :file, required: true %>
+      </div>
+
+      <div class="col">
+        <%= f.submit "LOUER!", class: "btn btn-primary" %>
+      </div>
+  </div>
+    <% end %>
+</div>
+</div>
