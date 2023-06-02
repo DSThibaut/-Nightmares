@@ -7,6 +7,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
     @booking.house_id = params[:id]
+    resa_date = @booking.date
+    bookings = Booking.all
+    bookings.each do |resa|
+      if resa.date == resa_date
+        return redirect_to new_booking_path, notice: "La maison est déja prise a cette date"
+      end
+    end
     @booking.save
     redirect_to profil_path(current_user[:id])
   end
@@ -36,7 +43,7 @@ class BookingsController < ApplicationController
     if @booking.update(accepted: false)
       redirect_to profil_path, notice: "Refusé"
     else
-      redirect_to profil_path, notice: "erreur"
+      redirect_to profil_path, notice: "Erreur"
     end
   end
 
