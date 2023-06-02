@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 232px;
+  margin-top: 560px;
 }
 </style>
 
@@ -62,3 +62,40 @@ body {
 
   </div>
 </div>
+
+
+
+
+
+
+<div class="ca-me-soule">
+
+<div class="columnProfil">
+  <p><strong>Mes demandes de reservation :</strong></p>
+  <% @reservations.each do |booking| %>
+    <% if booking.house.photo.attached? %>
+        <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
+      <% else %>
+        <%= image_tag("fantome.png") %>
+      <% end %>
+    <p><h3><%= booking.house.name %></h3></p>
+    <p>Date: <%= booking.date %></p>
+    <p>client: <%="#{booking.customer.first_name} #{booking.customer.last_name}" %><p>
+    <p>Téléphone: <%= "#{booking.customer.phone_number}" %></p>
+    <% if booking.accepted.nil? %>
+      <%= link_to "Confirmer", approve_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
+      <%= link_to "Refuser", decline_booking_path(booking.id), data: {turbo_method: "PATCH"}, class: "btn btn-primary" %>
+    <% else %>
+      <% if booking.accepted %>
+        <p><strong>Confirmé</strong></p>
+      <% else %>
+        <p><strong>Refusé</strong></p>
+      <% end %>
+    <% end %>
+  <% end%>
+
+
+
+</div>
+<br>
+<br>
