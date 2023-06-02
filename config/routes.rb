@@ -12,6 +12,4 @@ Rails.application.routes.draw do
   delete 'bookings/:id', to: 'bookings#destroy', as: 'delete_booking'
   patch 'bookings/:id/approve', to: 'bookings#approve', as: 'approve_booking'
   patch 'bookings/:id/decline', to: 'bookings#decline', as: 'decline_booking'
-  delete 'bookings/:id', to: 'bookings#destroy', as: 'delete_booking'
-
 end
