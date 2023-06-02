@@ -42,6 +42,8 @@
           <p>Téléphone: <%= "#{booking.house.owner.phone_number}" %></p>
           <p></p>
           <%= link_to "MODIFIER UNE RESERVATION",  edit_booking_path(booking) %>
+          <p></p>
+          <%= link_to "SUPPRIME TA RESERVATION", delete_booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
         <% end%>
       </div>
   </div>
