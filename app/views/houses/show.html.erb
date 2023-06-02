@@ -1,12 +1,47 @@
-<h1>Haunted house details</h1>
-<p></p>
-<h2><%=@house.name%></h2>
-<p> Description: <%=@house.description%></p>
-<p> Address: <%=@house.address%><p>
-<p> Superficy: <%=@house.superficy%><p>
-<p> Price: <%=@house.price%><p>
-<p> Propriétaire: <%="#{@house.owner.first_name} #{@house.owner.last_name} #{@house.owner.phone_number}" %><p>
+<div id='show-page'>
+  <div id='show-elements'>
 
-<%= link_to "LOUER CETTE MAISON", new_booking_path if current_user != @house.owner %>
+    <table border="4">
+    <tbody>
+    <tr>
 
-<%= link_to "VISUALISER SUR LA MAP", dracula_path  %>
+    <td>&nbsp;
+      <div class='container photo-du-bien'>
+        <%= cl_image_tag @house.photo.key, alt: 'Photo du bien', class: 'property-image' %>
+      </div>
+    </td>
+
+    </tr>
+    <tr>
+    <td>&nbsp;
+
+    <div class='texte-carte-show'>
+      <h2>Informations sur le bien</h2>
+      <br>
+
+      <h3><%=@house.name%></h3>
+
+      <p> <em>Description:</em> <%=@house.description%></p>
+
+      <p> <em>Adresse:</em> <%=@house.address%><p>
+
+      <p> <em>Superficie:</em> <%=@house.superficy%> m²<p>
+
+      <p> <em>Propriétaire:</em> <%="#{@house.owner.first_name} #{@house.owner.last_name} #{@house.owner.phone_number}" %><p>
+
+      <p> <em>Prix:</em> <b><%=@house.price%> €</b><p>
+      <br>
+
+
+      <%= link_to "<button class='btn btn-secondary' id='btn-louez-ce-bien'>Louer ce bien</button>".html_safe, new_booking_path %>
+      <br>
+
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+  </div>
+
+</div>

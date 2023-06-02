@@ -1,8 +1,45 @@
-<h1>Nouvelle réservation</h1>
+<div id='booking-page'>
+  <div id='booking-elements'>
 
-<%= simple_form_for [@booking] do |f| %>
-  <%= f.input :date, required: true%>
-  <%= f.submit "VALIDER LA RESERVATION", class: "btn btn-primary" %>
-<% end %>
 
-<%= link_to "ACCUEIL", root_path%>
+    <table border="4">
+    <tbody>
+    <tr>
+
+    <td>&nbsp;
+      <div class='container photo-booking'>
+        <%= image_tag "fantome.png", id: "image-booking" %>
+
+      </div>
+    </td>
+
+    </tr>
+    <tr>
+    <td>&nbsp;
+
+    <div class='texte-carte-booking'>
+      <h2>Nouvelle réservation</h2>
+      <br>
+      <p>Choisissez la date de la location.</p>
+
+      <%= simple_form_for [@booking] do |f| %>
+        <%= f.input :date, required: true%>
+        <div class="text-center">
+          <%= f.submit "Valider la réservation", class: "btn btn-secondary", id: "btn-valider-booking" %>
+        </div>
+
+      <% end %>
+      <br>
+
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="text-center", id="btn-accueil-booking">
+      <%= link_to "Retour à l'accueil", root_path, class: "btn btn-secondary", id: "btn-retour-booking" %>
+    </div>
+
+  </div>
+
+</div>
