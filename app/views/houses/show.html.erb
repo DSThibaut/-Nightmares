@@ -8,3 +8,5 @@
 <p> Propriétaire: <%="#{@house.owner.first_name} #{@house.owner.last_name} #{@house.owner.phone_number}" %><p>
 
 <%= link_to "LOUER CETTE MAISON", new_booking_path if current_user != @house.owner %>
+
+<%= link_to "VISUALISER SUR LA MAP", dracula_path  %>
