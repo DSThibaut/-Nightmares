@@ -43,7 +43,7 @@
             <% if house.photo.attached? %>
               <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
             <% else %>
-              <%= image_tag("citrouille.png") %>
+              <%= image_tag("fantome.png") %>
             <% end %>
             <h2><%= house.name %></h2>
             <div class="rating">
