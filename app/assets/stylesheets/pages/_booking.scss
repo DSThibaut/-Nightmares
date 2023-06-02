@@ -1,0 +1,43 @@
+#booking-page {
+  background-color: #282020;
+  padding-top: 4%;
+  padding-bottom: 72px;
+}
+
+#booking-elements {
+  display: grid;
+  justify-content: center;
+}
+
+#booking-elements table {
+display: grid;
+justify-content: center;
+background-color: #F5F5F5;
+}
+
+#image-booking {
+  max-width: 160px;
+}
+
+.photo-booking {
+  display: grid;
+  justify-content: center;
+}
+
+.texte-certe-booking {
+  display: grid;
+  justify-items: center;
+}
+
+#btn-accueil-booking {
+  margin-top: 16px;
+}
+
+#btn-retour-booking {
+  background-color: #6A4D57;
+}
+
+#btn-valider-booking {
+  background-color: #6A4D57;
+  margin-top: 16px;
+}
