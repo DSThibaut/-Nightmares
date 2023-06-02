@@ -32,8 +32,11 @@
       <p> <em>Prix:</em> <b><%=@house.price%> €</b><p>
       <br>
 
-
-      <%= link_to "<button class='btn btn-secondary' id='btn-louez-ce-bien'>Louer ce bien</button>".html_safe, new_booking_path %>
+      <% if current_user == nil %>
+        <%= link_to "<button class='btn btn-secondary' id='btn-louez-ce-bien'>Louer ce bien</button>".html_safe, new_user_registration_path %>
+      <% elsif current_user != @house.owner %>
+        <%= link_to "<button class='btn btn-secondary' id='btn-louez-ce-bien'>Louer ce bien</button>".html_safe, new_booking_path %>
+      <% end %>
       <br>
 
     </div>
