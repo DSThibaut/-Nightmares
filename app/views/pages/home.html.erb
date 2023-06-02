@@ -35,30 +35,35 @@
 <div class ="centered-body-elements">
 
 <main>
-<div class="container">
-  <div class="row">
-    <% @houses.each do |house| %>
-      <div class="col-md-4 zoom">
-        <%= link_to house_path(house.id) do %>
-          <% if house.photo.attached? %>
-            <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
-          <% else %>
-            <%= image_tag("citrouille.png") %>
+  <div class="container">
+    <div class="row">
+      <% @houses.each do |house| %>
+        <div class="col-md-4 zoom">
+          <%= link_to house_path(house.id) do %>
+            <% if house.photo.attached? %>
+              <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
+            <% else %>
+              <%= image_tag("fantome.png") %>
+            <% end %>
+            <h2><%= house.name %></h2>
+            <div class="rating">
+              <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+              <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+              <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+              <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
+              <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
+            </div>
+            <p>Prix: <strong><%= house.price %>€</strong></p>
           <% end %>
-          <h2><%= house.name %></h2>
-          <div class="rating">
-            <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
-            <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
-            <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
-            <%= image_tag 'citrouille-pleine.png', alt: 'Citrouille pleine'%>
-            <%= image_tag 'citrouille-vide.png', alt: 'Citrouille vide'%>
-          </div>
-          <p>Prix: <strong><%= house.price %>€</strong></p>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+    <div style="width: 60%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </main>
 
 <br>
@@ -68,7 +73,5 @@
       <div class="word">Worst</div>
       <div class="word">Holidays</div>
     </div>
-
   </div>
-
 </div>

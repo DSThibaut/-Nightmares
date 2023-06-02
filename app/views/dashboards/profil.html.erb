@@ -36,6 +36,7 @@
             <% else %>
               <%= image_tag("citrouille.png") %>
             <% end %>
+
           <p>Nom: <%= booking.house.name %></p>
           <p>Date: <%= booking.date %></p>
           <p>Propriétaire: <%="#{booking.house.owner.first_name} #{booking.house.owner.last_name}" %><p>
@@ -45,6 +46,7 @@
           <p></p>
           <%= link_to "SUPPRIME TA RESERVATION", delete_booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
         <% end%>
+
       </div>
   </div>
 </div>

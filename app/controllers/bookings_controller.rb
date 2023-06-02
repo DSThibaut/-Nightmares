@@ -38,7 +38,6 @@ class BookingsController < ApplicationController
     else
       redirect_to profil_path, notice: "erreur"
     end
-
   end
 
   def destroy
