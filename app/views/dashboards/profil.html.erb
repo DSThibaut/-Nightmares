@@ -17,7 +17,7 @@
          <% if house.photo.attached? %>
               <%= cl_image_tag house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
             <% else %>
-              <%= image_tag("fantome.png") %>
+              <%= cl_image_tag("fantome.png") %>
             <% end %>
           <p><%= house.name %></p>
           <p></p>
@@ -34,7 +34,7 @@
           <% if booking.house.photo.attached? %>
               <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
             <% else %>
-              <%= image_tag("citrouille.png") %>
+              <%= image_tag("fantome.png") %>
             <% end %>
 
           <p>Nom: <%= booking.house.name %></p>
@@ -57,7 +57,7 @@
     <% if booking.house.photo.attached? %>
         <%= cl_image_tag booking.house.photo.key, alt: 'Maison des horreurs', class: 'property-image' %>
       <% else %>
-        <%= image_tag("citrouille.png") %>
+        <%= image_tag("fantome.png") %>
       <% end %>
     <p>Nom: <%= booking.house.name %></p>
     <p>Date: <%= booking.date %></p>
